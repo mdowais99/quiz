@@ -51,23 +51,23 @@ var quiz =[
   var totalNum  = document.getElementById('totalNum');
   var btnCont  = document.getElementById('btnCont');
   var questionBox = document.getElementById('questionBox');
-  var opt = document.getElementById('optBtn');
+  var opt = document.getElementsByClassName('optBtn');
   console.log(opt);
   
   currentIndex = 0;
   
   
   function renderInit(){
-    opt.innerHTML = ""
+    // opt.innerHTML = ""
     currentNum.innerHTML = currentIndex +1;
     totalNum.innerHTML = quiz.length;
-    
     questionBox.innerHTML = quiz[currentIndex].question;
 
-    for (var i=0; i < quiz[currentIndex].options.length; i++){
-      console.log(quiz[currentIndex].options[i]);
+    for (var i=0; i < opt.length; i++){
+      // console.log(quiz[currentIndex].options[i]);
 
-      opt.innerHTML += `<button class="col btn">${quiz[currentIndex].options[i]}</button>` 
+      // opt.innerHTML += `<button class="col btn">${quiz[currentIndex].options[i]}</button>`
+      opt[i].innerHTML = quiz[0].options[i] 
     }
 
 
@@ -78,11 +78,11 @@ var quiz =[
   }
   renderInit()
 
-  function next() {
-    if (currentIndex + 1 == quiz.length) {
+  // function next() {
+  //   if (currentIndex + 1 == quiz.length) {
 
-    } else {
-      currentIndex++;
-      renderInit();
-    }
-  }
+  //   } else {
+  //     currentIndex++;
+  //     renderInit();
+  //   }
+  // }
